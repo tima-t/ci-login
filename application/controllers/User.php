@@ -68,7 +68,9 @@ class User extends CI_Controller {
 			$password = $this->input->post('password');
 			$cd_key = $this->input->post('product_number');
 
-			if ($this->cdkey_model->update_cdKey($username,$cd_key) && $this->user_model->create_user($username, $email, $password)) {
+			if ($this->cdkey_model->update_cdKey($username,$cd_key)
+					&& $this->user_model->create_user($username, $email, $password) )
+			{
 
 				// user creation ok
 				$this->load->view('header');
