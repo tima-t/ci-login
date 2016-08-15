@@ -33,7 +33,7 @@ class Cdkey_model extends CI_Model {
 	public function update_cdKey($username,$cdkey) {
 
 		$data = array(
-			'user_id'  => $username,
+			'username'  => $username,
 			'first_use' => date('Y-m-j H:i:s'),
 			'used'     => true,
 		);
