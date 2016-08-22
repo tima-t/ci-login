@@ -38,6 +38,9 @@ aaa
 								console.log("no more lessons");
 								return ;
 							}
+							$("#myVideo").unbind().on("ended", function() {
+								$('.page-up').trigger('click');
+							});
 							page += 1;
 						}
 				);
@@ -55,6 +58,9 @@ aaa
 								console.log("same page");
 								return ;
 							}
+							$("#myVideo").unbind().on("ended", function() {
+								$('.page-up').trigger('click');
+							});
 						}
 				);
 
@@ -72,11 +78,15 @@ aaa
 								console.log("no more lessons");
 								return ;
 							}
+							$("#myVideo").unbind().on("ended", function() {
+								$('.page-up').trigger('click');
+							});
 							page -= 1;
 						}
 					);
 
 			});
+
 
 		});
 </script>
