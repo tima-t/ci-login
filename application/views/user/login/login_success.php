@@ -7,6 +7,6 @@
 			</div>
 			<p>You are now logged in.</p>
 		</div>
-		<a class='btn btn-success' href="<?=base_url('lesson?lesson=1&page=1')?>">lesson 1 </a>
+		<a class='btn btn-success' href="<?=base_url('lesson?lesson=1&page=0')?>">lesson 1 </a>
 	</div><!-- .row -->
 </div><!-- .container -->

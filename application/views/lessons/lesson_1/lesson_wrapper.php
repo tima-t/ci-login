@@ -10,25 +10,46 @@ aaa
 
 <script>
 		$(document).ready(function() {
-			var page = <?php echo $page; ?>;
+			var min_page = -100,
+			max_page = 1000,
+			page = <?= $page ?>;
 
 			// $('#lesson-wrapper').load('lesson?lesson=1&page=2');
 			$('.page-up').on('click', function() {
-					$('#lesson-wrapper').load('lesson?lesson=1&page=' + parseInt(page+1));
-					page += 1;
-			});
-
-			$('.page-down').on('click', function() {
-					var backToFirst = false;
-					if (page - 1 == 1) {
-						 var backToFirst = true;
+					if (max_page == page) {
+						return;
 					}
-					$('#lesson-wrapper').load('lesson?lesson=1&page=' + parseInt(page-1) + '&backToFirst=' + backToFirst);
-					page -= 1;
+					console.log(page);
+					$('#lesson-wrapper').load('lesson/navigate?lesson=1&page=' + parseInt(page+1),
+						function(responseText, textStatus, req){
+							if (textStatus == "error") {
+								max_page = page;
+								console.log("no more lessons");
+								return ;
+							}
+							page += 1;
+						}
+				);
+
 			});
 
 			$('.page-down').on('click', function() {
-					$('#lesson-wrapper').load('lesson?lesson=1&page=' + parseInt(page));
+					console.log(page);
+					if (min_page == page) {
+						return;
+					}
+					$('#lesson-wrapper').load('lesson/navigate?lesson=1&page=' + parseInt(page-1),
+						function(responseText, textStatus, req){
+							if(textStatus == 'error'){
+								min_page = page;
+								console.log("no more lessons");
+								return ;
+							}
+							page -= 1;
+						}
+					);
+
 			});
+
 		});
 </script>

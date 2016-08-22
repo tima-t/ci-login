@@ -53,6 +53,7 @@ $route['register'] = 'user/register';
 $route['login'] = 'user/login';
 $route['logout'] = 'user/logout';
 $route['lesson'] = 'lesson';
+$route['lesson/navigate'] = 'lesson/navigate';
 
 $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
