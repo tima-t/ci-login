@@ -1,0 +1,17 @@
+#lesson-wrapper{
+	font-size: 20px;
+}
+.lesson-navigation{
+	margin-top: 50px;
+}
+
+.lesson-navigation  button {
+	display:inline-block;
+	width:50%;
+}
+
+#myVideo{
+	width:80%;
+	margin-left: 10%;
+	margin-right: 10%;
+}

@@ -1,10 +1,22 @@
 <div id="lesson-wrapper">
 aaa
 </div>
-<div class="row text-center">
-		<div class="col-sm-4 btn btn-success page-down"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
-		<div class="col-sm-4 btn btn-success page-reload"><i class="fa fa-undo" aria-hidden="true"></i></div>
-		<div class="col-sm-4 btn btn-success page-up"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
+<div class="lesson-navigation row text-center">
+		<div class="col-xs-4 ">
+			<button class="page-down btn btn-success " type="button" name="button">
+				<i class="fa fa-arrow-left" aria-hidden="true"></i>
+			</button>
+		</div>
+		<div class="col-xs-4 ">
+			<button class="btn btn-success page-reload" type="button" name="button">
+				<i class="fa fa-undo" aria-hidden="true"></i>
+			</button>
+		</div>
+		<div class="col-xs-4 ">
+			<button class="btn btn-success page-up" type="button" name="button">
+				<i class="fa fa-arrow-right" aria-hidden="true"></i>
+			</button>
+		</div>
 </div>
 <!-- move this script to assets -->
 
