@@ -3,7 +3,7 @@ aaa
 </div>
 <div class="row text-center">
 		<div class="col-sm-4 btn btn-success page-down"><i class="fa fa-arrow-left" aria-hidden="true"></i></div>
-		<div class="col-sm-4 btn btn-success page-reload; ?>"><i class="fa fa-undo" aria-hidden="true"></i></div>
+		<div class="col-sm-4 btn btn-success page-reload"><i class="fa fa-undo" aria-hidden="true"></i></div>
 		<div class="col-sm-4 btn btn-success page-up"><i class="fa fa-arrow-right" aria-hidden="true"></i></div>
 </div>
 <!-- move this script to assets -->
@@ -14,7 +14,6 @@ aaa
 			max_page = 1000,
 			page = <?= $page ?>;
 
-			// $('#lesson-wrapper').load('lesson?lesson=1&page=2');
 			$('.page-up').on('click', function() {
 					if (max_page == page) {
 						return;
@@ -28,6 +27,22 @@ aaa
 								return ;
 							}
 							page += 1;
+						}
+				);
+
+			});
+
+			$('.page-reload').on('click', function() {
+					console.log(page);
+					if (page<1) {
+						return;
+					}
+					$('#lesson-wrapper').load('lesson/navigate?lesson=1&page=' + parseInt(page),
+						function(responseText, textStatus, req){
+							if (textStatus == "error") {
+								console.log("same page");
+								return ;
+							}
 						}
 				);
 
