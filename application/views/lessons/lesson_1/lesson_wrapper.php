@@ -87,6 +87,20 @@ aaa
 
 			});
 
+			// key down event
+			$(document).keydown(function(e) {
+				console.log(e.keyCode);
+				if(e.keyCode == 39){
+					$('.page-up').trigger('click');
+				}
+				else if(e.keyCode == 37){
+					$('.page-down').trigger('click');
+				}
+				else if(e.keyCode == 17){
+					$('.page-reload').trigger('click');
+				}
+
+			});
 
 		});
 </script>
